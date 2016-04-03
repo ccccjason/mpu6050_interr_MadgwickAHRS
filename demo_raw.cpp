@@ -55,6 +55,13 @@ void setup()
     microsPrevious = tms.tv_usec;
 
     accelgyro.setIntDataReadyEnabled(true); // enable data ready interrupt
+
+    accelgyro.setZAccelOffset(-2339);
+    accelgyro.setZAccelOffset(683);
+    accelgyro.setZAccelOffset(1666);
+    accelgyro.setXGyroOffset(32);
+    accelgyro.setYGyroOffset(-72);
+    accelgyro.setZGyroOffset(5);
 }
 
 void loop()
