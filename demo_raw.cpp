@@ -75,8 +75,10 @@ void loop()
 
     gettimeofday(&tms, NULL);
     microsNow = tms.tv_usec;
-    //if (microsNow - microsPrevious >= microsPerReading) 
-    if(accelgyro.getIntDataReadyStatus() == 1) { // wait for data ready status register to update all data registers
+
+    //if (microsNow - microsPrevious >= microsPerReading)
+    if (accelgyro.getIntDataReadyStatus() ==
+        1) { // wait for data ready status register to update all data registers
 
         // read raw accel/gyro measurements from device
         accelgyro.getMotion6(&aix, &aiy, &aiz, &gix, &giy, &giz);
