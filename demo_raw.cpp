@@ -42,11 +42,14 @@ void setup()
     printf("Initializing I2C devices...\n");
     accelgyro.initialize();
     accelgyro.setRate(4); // 1khz / (1 + 4) = 200 Hz
+    filter.begin(25);
 
     // verify connection
     printf("Testing device connections...\n");
     printf(accelgyro.testConnection() ? "MPU6050 connection successful\n" :
            "MPU6050 connection failed\n");
+
+
 
     // initialize variables to pace updates to correct rate
     microsPerReading = 1000000 / 200;
